@@ -1,6 +1,6 @@
 import numpy as np
 
-
+# Node class to intialize it
 class Node:
     def __init__(self, nodeState, superNode, eachNode):
         self.nodeState = nodeState
@@ -8,14 +8,16 @@ class Node:
         self.eachNode = eachNode
 
 
+
 class addNodes:
     def __init__(self):
         self.nodeListFront = []
-
+    # add method with parameter node
     def add(self, node):
         
         self.nodeListFront.append(node)
 
+    #  checks the state of the node
     def nodeState(self, nodeState):
 
         i = 0
@@ -25,14 +27,14 @@ class addNodes:
                 return True
             i += 1
         return False
-
+    # check if the stack is empty or not
     def checkingIsNull(self):
 
         if self.nodeListFront:
             return False
         else:
             return True
-
+    # Removing nodes if nodeListFront is not empty
     def deleteNode(self):
         
         if self.checkingIsNull():
@@ -60,6 +62,7 @@ class Puzzle:
         self.results = [results, resultsIndex]
         self.resultantReq = None
 
+    # Method to find the neighbours of the node
     def nodeRelatives(self, nodeState):
        
         puzzleMatririx, (rowws, cols) = nodeState
@@ -112,7 +115,7 @@ class Puzzle:
 
         print("resultant path is ", resultPath)
 
-
+    #  Checking the state of the node is missing or not
     def missedNodeState(self, nodeState):
 
         return not any((st[0] == nodeState[0]).all() for st in self.explored_nodes)
