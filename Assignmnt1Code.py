@@ -55,7 +55,7 @@ class queofStack(addNodes):
             self.nodeListFront = self.nodeListFront[1:]
             return node
 
-
+# Creating class puzzle
 class Puzzle:
     def __init__(self, startPoint, startIndex, results, resultsIndex):
         self.startPoint = [startPoint, startIndex]
@@ -156,6 +156,7 @@ class Puzzle:
 
 print("-----------------------Start Matrix----------------------------------")
 
+# Give input for number of rows and columns for matrix
 rows = int(input("Enter the number of rows of start matrix: "))
 cols = int(input("Enter the number of columns of start matrix: "))
 
