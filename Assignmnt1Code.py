@@ -98,6 +98,7 @@ class Puzzle:
 
         return resultant
 
+    # Method to display the result
     def displayResult(self):
         resultantReq = self.resultantReq if self.resultantReq is not None else None
         print("starting state of the node:\n", self.startPoint[0], "\n")
@@ -120,7 +121,7 @@ class Puzzle:
 
         return not any((st[0] == nodeState[0]).all() for st in self.explored_nodes)
 
-
+    # Method to solve the puzzle
     def solving(self):
         self.visitedNodes = 0
 
@@ -175,6 +176,7 @@ print("resultmatrix is ", resultMatrix)
 startMatrixIndices = (1, 1)
 resultmatrixIndices = (1, 0)
 
+# Creating objects for the classes
 p = Puzzle(startMatrix, startMatrixIndices, resultMatrix, resultmatrixIndices)
 p.solving()
 p.displayResult()
